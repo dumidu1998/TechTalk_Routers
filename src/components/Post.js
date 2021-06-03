@@ -1,12 +1,12 @@
 import React from 'react'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router';
 
 export default function Post() {
-    const { postId } = useParams();
+    const { postid } = useParams();
     return (
         <div>
-            In the post
-            <h3>{postId}</h3>
+            This is my Post
+            <h1>{postid}</h1>
         </div>
     )
 }

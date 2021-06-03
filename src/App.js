@@ -9,9 +9,8 @@ import {
   useParams,
   useRouteMatch
 } from "react-router-dom";
-import Posts from './components/Posts';
 import Home from './components/Home';
-import Post from './components/Post';
+import Posts from './components/Posts';
 
 
 function App() {
@@ -20,13 +19,10 @@ function App() {
       <Router>
         <Topics />
         <Switch>
-
           <Route exact path="/">
             <Home />
           </Route>
-
-          <Route path="/posts" component={Posts} />  {/* New way */}
-
+          <Route path="/posts" component={Posts} />
         </Switch>
       </Router>
     </>

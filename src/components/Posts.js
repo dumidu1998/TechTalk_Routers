@@ -1,35 +1,30 @@
 import React from 'react'
-import { Link, Route, Switch, useParams, useRouteMatch } from 'react-router-dom'
+import { Link, Route, Switch, useRouteMatch } from 'react-router-dom'
 import Post from './Post';
+import Register from './Register';
 
 export default function Posts() {
-    let { path, url } = useRouteMatch();
+    const { url } = useRouteMatch();
     return (
         <div>
-            <div>This My Posts</div>
-            <div>
-                <Link to={`${url}/post1`} >Post1</Link>
-            </div>
-            <div>
-                <Link to={`${url}/post2`} >Post2</Link>
-            </div>
-            <div>
-                <Link to={`${url}/post3`} >Post3</Link>
-            </div>
-            <Switch>
-                <Route exact path={path}>
-                    <div>This My Posts</div>
+            this is post<br />
+            <Link to={`${url}/post1`} >My post 1</Link><br />
+            <Link to={`${url}/post2`} >My post 2</Link><br />
+            <Link to={`${url}/post3`} >My post 3</Link><br />
+            <Link to={`${url}/register`} >Register</Link>
 
+            <Switch >
+                {/* /posts */}
+                <Route exact path={url}>
+                    This my posts home
                 </Route>
-
-                <Route path={`${path}/:postId`}>
+                <Route path={`${url}/register`} >
+                    <Register />
+                </Route>
+                <Route path={`${url}/:postid`} >
                     <Post />
                 </Route>
-
             </Switch>
-
-
-
-        </div>
+        </div >
     )
 }

@@ -12,10 +12,12 @@ export default function Topics() {
     return (
         <>
             <div>
-                <Link to="/">Home</Link>
-            </div>
-            < div >
-                <Link to="/posts">Posts</Link>
+                <button>
+                    <Link to="/">Home</Link>
+                </button>
+                <button>
+                    <Link to="/posts">Posts</Link>
+                </button>
             </div >
         </>
 
